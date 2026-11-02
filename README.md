@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Arisha Azmi — Portfolio
 
-## Getting Started
+A rebuild of [arishaazmi.framer.website](https://arishaazmi.framer.website/) from the Figma design, as a fast, responsive Next.js site.
 
-First, run the development server:
+**Stack:** Next.js 16 (App Router, static export of every route) · React 19 · TypeScript · Tailwind CSS v4 · Motion (animations) · Lenis (smooth scrolling) · self-hosted fonts.
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Import the repo on [Vercel](https://vercel.com/new) — no configuration needed. Set `site.url` in `src/content/site.ts` to the final domain so Open Graph links are correct.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Where things live
 
-## Learn More
+| Path | What |
+| --- | --- |
+| `src/content/site.ts` | Name, email, social links, résumé link, nav items |
+| `src/content/home.ts` | Homepage copy: roles, about text, skills, word-search grid |
+| `src/content/projects.ts` | Cards on the Product / Brand listing pages |
+| `src/content/caseStudies.ts` | Esports, Illume, AUIS case-study content (block-based) |
+| `src/content/posters.ts` | Poster gallery list (add `{ src, alt, w, h }` entries) |
+| `src/components/` | Shared pieces: `Star`, `StarField`, `StarNav`, `Ticker`, `ScriptHeading`, `Nav`, `ProjectCard`, case-study blocks |
+| `public/fonts` | Sloop, Alte Haas Grotesk, Satoshi, Inter, Poppins (woff2) |
+| `public/images` | Site imagery, grouped by page |
 
-To learn more about Next.js, take a look at the following resources:
+### Adding a case study
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add a `CaseStudy` object in `src/content/caseStudies.ts` (title, meta, hero band colour, ticker word, and a list of blocks: `label`, `p`, `lead`, `bullets`, `quote`, `h`, `figure`, `figures`, `split`, `note`, `link`, `custom`) and a page under `src/app/projects/<area>/<slug>/page.tsx` that renders `<CaseStudy study={…} />`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Old URLs
 
-## Deploy on Vercel
+The Framer paths (`/productpage`, `/brandgraphicpage/auis`, `/socialmedia`, …) permanently redirect to the new routes — see `next.config.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Accessibility & motion
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Every decorative star is `aria-hidden`; headings are real text (the script titles are the Sloop font, not images). All looping animation and smooth scrolling switch off under `prefers-reduced-motion`.
