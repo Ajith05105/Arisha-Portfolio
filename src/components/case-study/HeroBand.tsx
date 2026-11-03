@@ -52,6 +52,18 @@ export function HeroBand({ study }: { study: CaseStudy }) {
             />
           </motion.div>
         </div>
+      ) : band.kind === "uoacs" ? (
+        <div className="mx-auto flex max-w-[1440px] items-center justify-center px-6 py-12 md:py-20">
+          <motion.div
+            className="w-full max-w-[720px] overflow-hidden rounded-[15px] border-[3px] border-red"
+            initial={reduce ? false : { opacity: 0, y: 40, rotate: -2 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <Image src="/images/uoacs/frame-39.png" alt="UOACS — Computer Science Society, University of Auckland" width={2604} height={1400} sizes="(min-width: 768px) 720px, 92vw" priority className="h-auto w-full" />
+          </motion.div>
+        </div>
       ) : band.image ? (
         <div className="mx-auto flex max-w-[1440px] justify-center px-4 py-8 md:py-10">
           <motion.div

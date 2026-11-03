@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
       { source: "/brandgraphicpage", destination: "/projects/brand", permanent: true },
       { source: "/brandgraphicpage/auis", destination: "/projects/brand/auis", permanent: true },
       { source: "/brandgraphicpage/posters", destination: "/posters", permanent: true },
+      { source: "/brandgraphicpage/uoacs", destination: "/projects/brand/uoacs", permanent: true },
       { source: "/socialmedia", destination: "/projects/social-media", permanent: true },
       { source: "/videoediting", destination: "/projects/video-editing", permanent: true },
     ];

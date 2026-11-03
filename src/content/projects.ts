@@ -60,7 +60,14 @@ export const brandProjects: Project[] = [
     tags: ["Brand Design", "Graphic"],
     href: "/posters",
     tint: "#d8aef0",
-    // TODO: replace with the LOOP poster grid from Figma once assets are available.
-    thumb: { kind: "cover", src: "/images/auis/posts-collage.png" },
+    thumb: { kind: "cover", src: "/images/projects/poster-gallery.webp" },
+  },
+  {
+    slug: "uoacs",
+    title: "UOACS",
+    tags: ["Brand Design", "Graphic", "Merch"],
+    href: "/projects/brand/uoacs",
+    tint: "#ff5e7a",
+    thumb: { kind: "cover", src: "/images/uoacs/arisha-2.webp" },
   },
 ];

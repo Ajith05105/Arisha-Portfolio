@@ -21,7 +21,7 @@ export type CaseStudy = {
   tagline: string;
   link?: { href: string; label: string };
   meta: { team: string; timeline: string; role: string };
-  band: { bg: string; image?: Figure; kind?: "mockup" | "auis" };
+  band: { bg: string; image?: Figure; kind?: "mockup" | "auis" | "uoacs" };
   ticker: string;
   back: string;
   blocks: Block[];
@@ -295,6 +295,7 @@ export const illume: CaseStudy = {
     { type: "label", text: "Try it yourself", align: "center" },
     { type: "p", text: "Illume runs on live Gemini API calls for parts of the experience (like the video-based skill verification), so not every screen will show up." },
     { type: "note", text: "Note: usage runs on Gemini API tokens, so functionality may be limited depending on availability." },
+    { type: "link", href: "https://gdgc-hackathon-2026.vercel.app/", label: "Open the live demo" },
 
     { type: "label", text: "Result" },
     { type: "p", text: "The team placed 3rd overall. My design gave Illume's technical concept a clear, usable interface, turning a fairly abstract, multi-layered trust system into something a user could navigate simply, via a single scannable credential card." },
@@ -395,4 +396,45 @@ export const auisLanyards = [
   { name: "Kathie Bahad", role: "President" },
 ];
 
-export const caseStudies = { esports, illume, auis };
+export const uoacs: CaseStudy = {
+  slug: "uoacs",
+  title: "UOACS",
+  subtitle: "(University of Auckland Compsci Society)",
+  tagline: "Applying UOACS's existing brand across posters, lanyards, ID cards, and exec merch.",
+  link: { href: "https://www.instagram.com/uoacompsci/", label: "@uoacompsci" },
+  meta: {
+    team: "3 designers",
+    timeline: "Ongoing",
+    role: "Working within UOACS's existing brand guidelines, I applied the system to new formats, starting with exec merch, then extending into posters, lanyards, and IDs.",
+  },
+  band: { bg: "#ffffff", kind: "uoacs" },
+  ticker: "UOACS",
+  back: "/projects/brand",
+  seo: "Applying the University of Auckland Computer Science Society's brand to posters, lanyards, ID cards and exec merch.",
+  blocks: [
+    { type: "quote", text: "Working within UOACS's existing brand guidelines, I applied the system to new formats; from exec merch, posters, lanyards, and IDs." },
+
+    { type: "label", text: "Social media posts", align: "center" },
+    {
+      type: "figures",
+      cols: 4,
+      figures: [
+        { src: "/images/uoacs/arisha-1.webp", alt: "Arisha Azmi — Design Executive introduction post", w: 897, h: 1120 },
+        { src: "/images/uoacs/studysesh.webp", alt: "404: Sleep Not Found — study session poster", w: 1121, h: 1400 },
+        { src: "/images/uoacs/bingo.webp", alt: "Programming Bingo Night poster", w: 1121, h: 1400 },
+        { src: "/images/uoacs/tower.webp", alt: "Decode the Markets — Quant trading at Tower Research Capital poster", w: 1121, h: 1400 },
+      ],
+    },
+
+    { type: "label", text: "Lanyard & ID", align: "center" },
+    { type: "custom", id: "lanyard" },
+
+    { type: "label", text: "Merch", align: "center" },
+    { type: "figure", figure: { src: "/images/uoacs/frame-39.png", alt: "UOACS Computer Science Society logo lock-up with the fox mascot", w: 2604, h: 1400, frame: true }, width: "narrow" },
+
+    { type: "label", text: "Secret project", align: "center" },
+    { type: "note", text: "under construction with matcha, modern family, and procrastination :D" },
+  ],
+};
+
+export const caseStudies = { esports, illume, auis, uoacs };

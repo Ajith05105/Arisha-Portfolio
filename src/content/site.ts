@@ -7,8 +7,10 @@ export const site = {
   email: "arishaazm29@gmail.com",
   instagram: "https://www.instagram.com/ririinprogress/",
   linkedin: "https://www.linkedin.com/in/arisha-azmi-94530731a/",
-  /** Behance appears in the Figma word-search; URL not provided yet. */
-  behance: null as string | null,
+  /** TODO: mock — replace with the real Behance profile URL. */
+  behance: "https://www.behance.net/arishaazmi" as string | null,
+  /** TODO: mock — replace with the real Illume live-demo URL. */
+  illumeDemo: "https://illume-demo.vercel.app",
   resume:
     "https://drive.google.com/file/d/1Wp2kn90oAKb60VVOgOr3ATG5N3xqhmAN/view?usp=sharing",
 };
